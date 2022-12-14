@@ -133,7 +133,7 @@ translocatoR <- function(data.folder, output.folder, samples, options = "pq",
     
     phased.folder <- file.path(data.folder, "strandphaser")
     if(!dir.exists(phased.folder)) {
-      stop(paste("The folder with phased haplotypes", phased.folder, "is not in the data folder. Stopping execution.\n"))
+      stop(paste("The folder containing strand phased haplotypes", phased.folder, "is not in the data folder. Stopping execution.\n"))
     }
   
     # read in files. uses normalized counts and assumes the exact output structure and directory names of MosaiCatcher
