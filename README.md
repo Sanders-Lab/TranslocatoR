@@ -64,8 +64,9 @@ blacklist | List of coordinates for centromeres and short arms for acrocentric c
 <br> </br> 
 **data.folder** should be the path to the MosaiCatcher data folder that contains your sample folders of choice. If you decide to use other files please ensure the following path-structure
 ```
-|__<sample ID>  
-    |__strandphaser  
+|__<data.folder>
+   |__<sample ID>  
+      |__<strandphaser>
          |__<StrandPhaseR_final_output.txt>
 ```
 
