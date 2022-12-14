@@ -131,16 +131,16 @@ translocatoR <- function(data.folder, output.folder, samples, options = "pq",
       stop("Could not create output folder for translocations.\n")
     })
     
-    phased.folder <- file.path(data.folder, "strand_states", cursample)
+    phased.folder <- file.path(data.folder, "strandphaser")
     if(!dir.exists(phased.folder)) {
-      stop(paste("The folder with phased haplotypes", phased.folder, "for sample", cursample, "is not in the data folder. Stopping execution.\n"))
+      stop(paste("The folder with phased haplotypes", phased.folder, "is not in the data folder. Stopping execution.\n"))
     }
   
     # read in files. uses normalized counts and assumes the exact output structure and directory names of MosaiCatcher
     cat("Reading files\n")
     
     tryCatch({
-      phased <- fread(file.path(phased.folder, "final.txt"))
+      phased <- fread(file.path(phased.folder, "StrandPhaseR_final_output.txt"))
     }, warning = function(w) {
       stop(paste("Can't read the phased counts file final.txt in", phased.folder, "\n"))
     })
